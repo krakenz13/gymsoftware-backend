@@ -1,505 +1,389 @@
 <template>
-    <div class="table-responsive">
-        <table class="table table-hover table-bordered" id="sampleTable">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>$320,800</td>
-                </tr>
-                <tr>
-                    <td>Garrett Winters</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>63</td>
-                    <td>2011/07/25</td>
-                    <td>$170,750</td>
-                </tr>
-                <tr>
-                    <td>Ashton Cox</td>
-                    <td>Junior Technical Author</td>
-                    <td>San Francisco</td>
-                    <td>66</td>
-                    <td>2009/01/12</td>
-                    <td>$86,000</td>
-                </tr>
-                <tr>
-                    <td>Cedric Kelly</td>
-                    <td>Senior Javascript Developer</td>
-                    <td>Edinburgh</td>
-                    <td>22</td>
-                    <td>2012/03/29</td>
-                    <td>$433,060</td>
-                </tr>
-                <tr>
-                    <td>Airi Satou</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>33</td>
-                    <td>2008/11/28</td>
-                    <td>$162,700</td>
-                </tr>
-                <tr>
-                    <td>Brielle Williamson</td>
-                    <td>Integration Specialist</td>
-                    <td>New York</td>
-                    <td>61</td>
-                    <td>2012/12/02</td>
-                    <td>$372,000</td>
-                </tr>
-                <tr>
-                    <td>Herrod Chandler</td>
-                    <td>Sales Assistant</td>
-                    <td>San Francisco</td>
-                    <td>59</td>
-                    <td>2012/08/06</td>
-                    <td>$137,500</td>
-                </tr>
-                <tr>
-                    <td>Rhona Davidson</td>
-                    <td>Integration Specialist</td>
-                    <td>Tokyo</td>
-                    <td>55</td>
-                    <td>2010/10/14</td>
-                    <td>$327,900</td>
-                </tr>
-                <tr>
-                    <td>Colleen Hurst</td>
-                    <td>Javascript Developer</td>
-                    <td>San Francisco</td>
-                    <td>39</td>
-                    <td>2009/09/15</td>
-                    <td>$205,500</td>
-                </tr>
-                <tr>
-                    <td>Sonya Frost</td>
-                    <td>Software Engineer</td>
-                    <td>Edinburgh</td>
-                    <td>23</td>
-                    <td>2008/12/13</td>
-                    <td>$103,600</td>
-                </tr>
-                <tr>
-                    <td>Jena Gaines</td>
-                    <td>Office Manager</td>
-                    <td>London</td>
-                    <td>30</td>
-                    <td>2008/12/19</td>
-                    <td>$90,560</td>
-                </tr>
-                <tr>
-                    <td>Quinn Flynn</td>
-                    <td>Support Lead</td>
-                    <td>Edinburgh</td>
-                    <td>22</td>
-                    <td>2013/03/03</td>
-                    <td>$342,000</td>
-                </tr>
-                <tr>
-                    <td>Charde Marshall</td>
-                    <td>Regional Director</td>
-                    <td>San Francisco</td>
-                    <td>36</td>
-                    <td>2008/10/16</td>
-                    <td>$470,600</td>
-                </tr>
-                <tr>
-                    <td>Haley Kennedy</td>
-                    <td>Senior Marketing Designer</td>
-                    <td>London</td>
-                    <td>43</td>
-                    <td>2012/12/18</td>
-                    <td>$313,500</td>
-                </tr>
-                <tr>
-                    <td>Tatyana Fitzpatrick</td>
-                    <td>Regional Director</td>
-                    <td>London</td>
-                    <td>19</td>
-                    <td>2010/03/17</td>
-                    <td>$385,750</td>
-                </tr>
-                <tr>
-                    <td>Michael Silva</td>
-                    <td>Marketing Designer</td>
-                    <td>London</td>
-                    <td>66</td>
-                    <td>2012/11/27</td>
-                    <td>$198,500</td>
-                </tr>
-                <tr>
-                    <td>Paul Byrd</td>
-                    <td>Chief Financial Officer (CFO)</td>
-                    <td>New York</td>
-                    <td>64</td>
-                    <td>2010/06/09</td>
-                    <td>$725,000</td>
-                </tr>
-                <tr>
-                    <td>Gloria Little</td>
-                    <td>Systems Administrator</td>
-                    <td>New York</td>
-                    <td>59</td>
-                    <td>2009/04/10</td>
-                    <td>$237,500</td>
-                </tr>
-                <tr>
-                    <td>Bradley Greer</td>
-                    <td>Software Engineer</td>
-                    <td>London</td>
-                    <td>41</td>
-                    <td>2012/10/13</td>
-                    <td>$132,000</td>
-                </tr>
-                <tr>
-                    <td>Dai Rios</td>
-                    <td>Personnel Lead</td>
-                    <td>Edinburgh</td>
-                    <td>35</td>
-                    <td>2012/09/26</td>
-                    <td>$217,500</td>
-                </tr>
-                <tr>
-                    <td>Jenette Caldwell</td>
-                    <td>Development Lead</td>
-                    <td>New York</td>
-                    <td>30</td>
-                    <td>2011/09/03</td>
-                    <td>$345,000</td>
-                </tr>
-                <tr>
-                    <td>Yuri Berry</td>
-                    <td>Chief Marketing Officer (CMO)</td>
-                    <td>New York</td>
-                    <td>40</td>
-                    <td>2009/06/25</td>
-                    <td>$675,000</td>
-                </tr>
-                <tr>
-                    <td>Caesar Vance</td>
-                    <td>Pre-Sales Support</td>
-                    <td>New York</td>
-                    <td>21</td>
-                    <td>2011/12/12</td>
-                    <td>$106,450</td>
-                </tr>
-                <tr>
-                    <td>Doris Wilder</td>
-                    <td>Sales Assistant</td>
-                    <td>Sidney</td>
-                    <td>23</td>
-                    <td>2010/09/20</td>
-                    <td>$85,600</td>
-                </tr>
-                <tr>
-                    <td>Angelica Ramos</td>
-                    <td>Chief Executive Officer (CEO)</td>
-                    <td>London</td>
-                    <td>47</td>
-                    <td>2009/10/09</td>
-                    <td>$1,200,000</td>
-                </tr>
-                <tr>
-                    <td>Gavin Joyce</td>
-                    <td>Developer</td>
-                    <td>Edinburgh</td>
-                    <td>42</td>
-                    <td>2010/12/22</td>
-                    <td>$92,575</td>
-                </tr>
-                <tr>
-                    <td>Jennifer Chang</td>
-                    <td>Regional Director</td>
-                    <td>Singapore</td>
-                    <td>28</td>
-                    <td>2010/11/14</td>
-                    <td>$357,650</td>
-                </tr>
-                <tr>
-                    <td>Brenden Wagner</td>
-                    <td>Software Engineer</td>
-                    <td>San Francisco</td>
-                    <td>28</td>
-                    <td>2011/06/07</td>
-                    <td>$206,850</td>
-                </tr>
-                <tr>
-                    <td>Fiona Green</td>
-                    <td>Chief Operating Officer (COO)</td>
-                    <td>San Francisco</td>
-                    <td>48</td>
-                    <td>2010/03/11</td>
-                    <td>$850,000</td>
-                </tr>
-                <tr>
-                    <td>Shou Itou</td>
-                    <td>Regional Marketing</td>
-                    <td>Tokyo</td>
-                    <td>20</td>
-                    <td>2011/08/14</td>
-                    <td>$163,000</td>
-                </tr>
-                <tr>
-                    <td>Michelle House</td>
-                    <td>Integration Specialist</td>
-                    <td>Sidney</td>
-                    <td>37</td>
-                    <td>2011/06/02</td>
-                    <td>$95,400</td>
-                </tr>
-                <tr>
-                    <td>Suki Burks</td>
-                    <td>Developer</td>
-                    <td>London</td>
-                    <td>53</td>
-                    <td>2009/10/22</td>
-                    <td>$114,500</td>
-                </tr>
-                <tr>
-                    <td>Prescott Bartlett</td>
-                    <td>Technical Author</td>
-                    <td>London</td>
-                    <td>27</td>
-                    <td>2011/05/07</td>
-                    <td>$145,000</td>
-                </tr>
-                <tr>
-                    <td>Gavin Cortez</td>
-                    <td>Team Leader</td>
-                    <td>San Francisco</td>
-                    <td>22</td>
-                    <td>2008/10/26</td>
-                    <td>$235,500</td>
-                </tr>
-                <tr>
-                    <td>Martena Mccray</td>
-                    <td>Post-Sales support</td>
-                    <td>Edinburgh</td>
-                    <td>46</td>
-                    <td>2011/03/09</td>
-                    <td>$324,050</td>
-                </tr>
-                <tr>
-                    <td>Unity Butler</td>
-                    <td>Marketing Designer</td>
-                    <td>San Francisco</td>
-                    <td>47</td>
-                    <td>2009/12/09</td>
-                    <td>$85,675</td>
-                </tr>
-                <tr>
-                    <td>Howard Hatfield</td>
-                    <td>Office Manager</td>
-                    <td>San Francisco</td>
-                    <td>51</td>
-                    <td>2008/12/16</td>
-                    <td>$164,500</td>
-                </tr>
-                <tr>
-                    <td>Hope Fuentes</td>
-                    <td>Secretary</td>
-                    <td>San Francisco</td>
-                    <td>41</td>
-                    <td>2010/02/12</td>
-                    <td>$109,850</td>
-                </tr>
-                <tr>
-                    <td>Vivian Harrell</td>
-                    <td>Financial Controller</td>
-                    <td>San Francisco</td>
-                    <td>62</td>
-                    <td>2009/02/14</td>
-                    <td>$452,500</td>
-                </tr>
-                <tr>
-                    <td>Timothy Mooney</td>
-                    <td>Office Manager</td>
-                    <td>London</td>
-                    <td>37</td>
-                    <td>2008/12/11</td>
-                    <td>$136,200</td>
-                </tr>
-                <tr>
-                    <td>Jackson Bradshaw</td>
-                    <td>Director</td>
-                    <td>New York</td>
-                    <td>65</td>
-                    <td>2008/09/26</td>
-                    <td>$645,750</td>
-                </tr>
-                <tr>
-                    <td>Olivia Liang</td>
-                    <td>Support Engineer</td>
-                    <td>Singapore</td>
-                    <td>64</td>
-                    <td>2011/02/03</td>
-                    <td>$234,500</td>
-                </tr>
-                <tr>
-                    <td>Bruno Nash</td>
-                    <td>Software Engineer</td>
-                    <td>London</td>
-                    <td>38</td>
-                    <td>2011/05/03</td>
-                    <td>$163,500</td>
-                </tr>
-                <tr>
-                    <td>Sakura Yamamoto</td>
-                    <td>Support Engineer</td>
-                    <td>Tokyo</td>
-                    <td>37</td>
-                    <td>2009/08/19</td>
-                    <td>$139,575</td>
-                </tr>
-                <tr>
-                    <td>Thor Walton</td>
-                    <td>Developer</td>
-                    <td>New York</td>
-                    <td>61</td>
-                    <td>2013/08/11</td>
-                    <td>$98,540</td>
-                </tr>
-                <tr>
-                    <td>Finn Camacho</td>
-                    <td>Support Engineer</td>
-                    <td>San Francisco</td>
-                    <td>47</td>
-                    <td>2009/07/07</td>
-                    <td>$87,500</td>
-                </tr>
-                <tr>
-                    <td>Serge Baldwin</td>
-                    <td>Data Coordinator</td>
-                    <td>Singapore</td>
-                    <td>64</td>
-                    <td>2012/04/09</td>
-                    <td>$138,575</td>
-                </tr>
-                <tr>
-                    <td>Zenaida Frank</td>
-                    <td>Software Engineer</td>
-                    <td>New York</td>
-                    <td>63</td>
-                    <td>2010/01/04</td>
-                    <td>$125,250</td>
-                </tr>
-                <tr>
-                    <td>Zorita Serrano</td>
-                    <td>Software Engineer</td>
-                    <td>San Francisco</td>
-                    <td>56</td>
-                    <td>2012/06/01</td>
-                    <td>$115,000</td>
-                </tr>
-                <tr>
-                    <td>Jennifer Acosta</td>
-                    <td>Junior Javascript Developer</td>
-                    <td>Edinburgh</td>
-                    <td>43</td>
-                    <td>2013/02/01</td>
-                    <td>$75,650</td>
-                </tr>
-                <tr>
-                    <td>Cara Stevens</td>
-                    <td>Sales Assistant</td>
-                    <td>New York</td>
-                    <td>46</td>
-                    <td>2011/12/06</td>
-                    <td>$145,600</td>
-                </tr>
-                <tr>
-                    <td>Hermione Butler</td>
-                    <td>Regional Director</td>
-                    <td>London</td>
-                    <td>47</td>
-                    <td>2011/03/21</td>
-                    <td>$356,250</td>
-                </tr>
-                <tr>
-                    <td>Lael Greer</td>
-                    <td>Systems Administrator</td>
-                    <td>London</td>
-                    <td>21</td>
-                    <td>2009/02/27</td>
-                    <td>$103,500</td>
-                </tr>
-                <tr>
-                    <td>Jonas Alexander</td>
-                    <td>Developer</td>
-                    <td>San Francisco</td>
-                    <td>30</td>
-                    <td>2010/07/14</td>
-                    <td>$86,500</td>
-                </tr>
-                <tr>
-                    <td>Shad Decker</td>
-                    <td>Regional Director</td>
-                    <td>Edinburgh</td>
-                    <td>51</td>
-                    <td>2008/11/13</td>
-                    <td>$183,000</td>
-                </tr>
-                <tr>
-                    <td>Michael Bruce</td>
-                    <td>Javascript Developer</td>
-                    <td>Singapore</td>
-                    <td>29</td>
-                    <td>2011/06/27</td>
-                    <td>$183,000</td>
-                </tr>
-                <tr>
-                    <td>Donna Snider</td>
-                    <td>Customer Support</td>
-                    <td>New York</td>
-                    <td>27</td>
-                    <td>2011/01/25</td>
-                    <td>$112,000</td>
-                </tr>
-            </tbody>
-        </table>
+  <div class="d-inline-flex ">
+    <button @click="abrirModalCrear(estudiante)" type="button" data-bs-toggle="modal"
+      data-bs-target="#staticBackdropCreated" class="d-inline-flex col btn btn-primary m-3">
+      <i class="bi bi-person-add"></i>Crear Usuario
+    </button>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover table-bordered" id="sampleTable">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Foto</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Cédula</th>
+          <th>Teléfono</th>
+          <th>Fecha de Creación</th>
+          <th>Aciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="estudiante in usuarios" :key="estudiante.id">
+          <td>{{ estudiante.id }}</td>
+          <td><img :src="estudiante.foto" alt="Foto" width="90"></td>
+          <td>{{ estudiante.nombre }}</td>
+          <td>{{ estudiante.apellido }}</td>
+          <td>{{ estudiante.cedula }}</td>
+          <td>{{ estudiante.telefono }}</td>
+          <td>{{ new Date(estudiante.created_at).toLocaleDateString('en-US') }}</td>
+
+          <td>
+            <div class="d-inline-flex ">
+              <button  type="button" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop" class="d-inline-flex col btn btn-primary m-1">
+                <i class="bi bi-eye me-2"></i>
+              </button>
+
+              <button type="button" data-bs-toggle="modal"
+                data-bs-target="#staticBackdropEdit" class="d-inline-flex col btn btn-success m-1">
+                <i class="bi bi-pen me-2"></i>
+              </button>
+
+
+              <button @click="swal" class="d-inline-flex col btn btn-danger m-1">
+                <i class="bi bi-trash me-2"></i>
+              </button>
+
+            </div>
+
+          </td>
+
+
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <!-- created User -->
+  <div class="modal fade" id="staticBackdropCreated" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-primary">
+          <h1 class="modal-title fs-5 " id="staticBackdropLabel">Crear Usuario</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <div v-if="this.cargando" class="text-center">
+            <div class="spinner-border mb-3 " style="width: 3rem; height: 3rem;" role="status">
+            </div>
+            <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+            </div>
+          </div>
+          <form>
+            <div class=" d-grid col-6 mx-auto mb-3">
+              <img v-if="this.foto"  height="150" :src="this.foto"  id="fotoimg" class="img-thumbnail" alt="">
+              <img v-else height="150"
+                src="https://cdn3.iconfinder.com/data/icons/leto-user-group/64/__man_user_person-512.png"
+                class="img-thumbnail" id="fotoimg"> 
+            </div>
+            <div class="input-group  mb-3">
+              <label for="fristname" class="input-group-text"><i class="bi bi-person-fill"></i></label>
+              <div class="col-sm-10 text-center">
+                <input type="text"  v-model="CrearUsuario.nombre" class="form-control" name="fristname" placeholder="Ingrese su Nombre">
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <label for="lastname" class="input-group-text"><i class="bi bi-people-fill"></i></label>
+              <div class="col-sm-10">
+                <input type="text"  v-model="CrearUsuario.apellido" class="form-control" id="lastname" name="lastname" placeholder="Ingrese su apellido">
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <label for="cedula" class="input-group-text"><i class="bi bi-person-vcard-fill"></i></label>
+              <div class="col-sm-10">
+                <input type="text"  v-model="CrearUsuario.cedula" class="form-control" id="cedula" name="cedula"
+                  placeholder="Ingrese su número de cédula">
+              </div>
+            </div>
+            <div class="input-group  mb-3">
+              <label for="phone" class="input-group-text"><i class="bi bi-telephone-inbound-fill"></i></label>
+              <div class="col-sm-10">
+                <input type="text"  v-model="CrearUsuario.telefono" class="form-control" id="phone" name="phone"
+                  placeholder="Ingrese su número de teléfono">
+              </div>
+            </div>
+            <div class=" input-group mb-3">
+              <span class="input-group-text"><i class="bi bi-camera-fill"></i></span>
+              <div class="col-sm-10">
+                <input v-on:change="previsualizarFoto" type="file" accept="image/png, image/jpeg, image/gif"
+                  class="form-control">
+
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" @click.prevent="crear" class="btn btn-success" data-bs-dismiss="modal">Guardar</button>
+
+        </div>
+      </div>
     </div>
+  </div>
+  <!-- View to User -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-primary">
+          <h1 class="modal-title fs-5 " id="staticBackdropLabel">Vista Del Usuauario</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <div v-if="this.cargando" class="text-center">
+            <div class="spinner-border mb-3 " style="width: 3rem; height: 3rem;" role="status">
+            </div>
+            <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+            </div>
+          </div>
+          <form>
+            <div class=" d-grid col-6 mx-auto mb-3">
+              <img v-if="this.foto" height="150" :src="this.foto" id="fotoimg" class="img-thumbnail" alt="">
+              <img v-else height="150"
+                src="https://cdn3.iconfinder.com/data/icons/leto-user-group/64/__man_user_person-512.png"
+                class="img-thumbnail" id="fotoimg">
+            </div>
+            <div class="input-group  mb-3">
+              <label for="fristname" class="input-group-text"><i class="bi bi-person-fill"></i></label>
+              <div class="col-sm-10 text-center">
+                <input type="text" class="form-control" v-model="CrearUsuario.nombre" name="fristname" placeholder="Ingrese su Nombre">
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <label for="lastname" class="input-group-text"><i class="bi bi-people-fill"></i></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" v-text="apellido" name="lastname"
+                  placeholder="Ingrese su apellido">
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <label for="cedula" class="input-group-text"><i class="bi bi-person-vcard-fill"></i></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" v-text="cedula" name="cedula"
+                  placeholder="Ingrese su número de cédula">
+              </div>
+            </div>
+            <div class="input-group  mb-3">
+              <label for="phone" class="input-group-text"><i class="bi bi-telephone-inbound-fill"></i></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" v-text="telefono" name="phone"
+                  placeholder="Ingrese su número de teléfono">
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Edit to user -->
+  <div class="modal fade" id="staticBackdropEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-success">
+          <h1 class="modal-title fs-5 " id="staticBackdropLabel">Editar Usuauario</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <div v-if="this.cargando" class="text-center">
+            <div class="spinner-border mb-3 " style="width: 3rem; height: 3rem;" role="status">
+            </div>
+            <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+            </div>
+          </div>
+          <form>
+            <div class=" d-grid col-6 mx-auto mb-3">
+              <img v-if="this.foto" height="150" :src="this.foto" id="fotoimg" class="img-thumbnail" alt="">
+              <img v-else height="150"
+                src="https://cdn3.iconfinder.com/data/icons/leto-user-group/64/__man_user_person-512.png"
+                class="img-thumbnail" id="fotoimg">
+            </div>
+            <div class="input-group  mb-3">
+              <label for="fristname" class="input-group-text"><i class="bi bi-person-fill"></i></label>
+              <div class="col-sm-10 text-center">
+                <input type="text" class="form-control" name="fristname" placeholder="Ingrese su Nombre">
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <label for="lastname" class="input-group-text"><i class="bi bi-people-fill"></i></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Ingrese su apellido">
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <label for="cedula" class="input-group-text"><i class="bi bi-person-vcard-fill"></i></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="cedula" name="cedula"
+                  placeholder="Ingrese su número de cédula">
+              </div>
+            </div>
+            <div class="input-group  mb-3">
+              <label for="phone" class="input-group-text"><i class="bi bi-telephone-inbound-fill"></i></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="phone" name="phone"
+                  placeholder="Ingrese su número de teléfono">
+              </div>
+            </div>
+            <div class=" input-group mb-3">
+              <span class="input-group-text"><i class="bi bi-camera-fill"></i></span>
+              <div class="col-sm-10">
+                <input v-on:change="previsualizarFoto" type="file" accept="image/png, image/jpeg, image/gif"
+                  class="form-control">
+
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Guardar</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
-
+  
 <script>
-import DataTable from 'datatables.net-vue3';
-import datatable from 'datatables.net-bs5'
-import DataTablesCore from 'datatables.net';
+import axios from 'axios';
+import $ from 'jquery';
 
+
+import DataTable from 'datatables.net-vue3';
+import datatable from 'datatables.net-bs5';
+import DataTablesCore from 'datatables.net';
+import jszip from 'jszip';
+import pdfmake from 'pdfmake/build/pdfmake';
+import print from 'datatables.net-buttons-bs5'
+import pdfFonts from "pdfmake/build/vfs_fonts";
+import 'datatables.net-buttons/js/dataTables.buttons'
+import 'datatables.net-buttons/js/buttons.html5'
+import { swal } from 'sweetalert2/dist/sweetalert2';
+
+
+
+
+
+
+window.JSZip = jszip
 
 
 DataTable.use(DataTablesCore);
 DataTable.use(datatable);
+DataTable.use(jszip);
+DataTable.use(pdfmake);
+DataTable.use(print);
+DataTable.use(pdfFonts);
+
+
+
+
+
+
 
 
 
 export default {
-    data() {
+  data() {
+    return {
+      CrearUsuario: {foto:'' ,nombre:'', apellido:'', cedula:'',telefono:''},
+      usuarios: [],
+      dataTable: null,
+      pdfMake: pdfMake
+
+
+
+    };
+  },
+  mounted() {
+    this.getEstudiantes();
+    this.pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
+    // const route = useRoute();
+    // this.id = route.params.id;
+    // this.url += '/' + this.id;
+
+  },
+  watch: {
+    usuarios: function () {
+      // Destruir la instancia DataTable existente y recrearla con los nuevos datos
+      if (this.dataTable) {
+        this.dataTable.destroy();
+      }
+      this.$nextTick(() => {
+        this.initializeDataTable();
+      });
+    },
+  },
+  methods: {
+
+    initializeDataTable() {
+      this.dataTable = $('#sampleTable').DataTable({
+        dom: "<'row'<'col-sm-12 mb-3 text-center'B>><'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6 'f>>" +
+          "<'row'<'col-sm-12'tr>>" +
+          "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 text-center col-md-7'p>>",
+        buttons: [
+          {
+            "extend": "copyHtml5",
+            "text": "Copiar",
+            "titleAttr": "Copiar",
+            "ClassName": "btn btn-secundary"
+          },
+          {
+            "extend": "excelHtml5",
+            "text": "Excel",
+            "titleAttr": "exportar a excel",
+            "className": "btn btn-success"
+          },
+          {
+            "extend": "pdfHtml5",
+            "text": "Pdf",
+            "titleAttr": "exportar pdf",
+            "className": "btn btn-danger"
+          },
+
+
+        ]
+
+      });
 
 
     },
-    mounted() {
-        this.tabla()
 
+    getEstudiantes() {
+      axios.get('http://127.0.0.1:8000/estudiantes/search').then((res) => {
+        this.usuarios = res.data;
+      });
+      
     },
-    methods: {
-        tabla() {
-            this.$nextTick(() => {
-                $('#sampleTable').DataTable();
-            });
-        }
+    crear(){
+      axios.post('http://127.0.0.1:8000/estudiantes',this.CrearUsuario).then((res) => {
+        this.usuarios = res.data;
+        $('#staticBackdropCreated').modal('hide');
+        swal("Felicides!", "Usuario Creado Exitosamente", "success");
+      }).catch(function() {
+        swal("Error!", "Intentelo De Nuevo! ", "error");
+      });
+      
+     
     }
-}
+  },
+};
 </script>
+  

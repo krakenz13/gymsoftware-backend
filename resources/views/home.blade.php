@@ -3,39 +3,31 @@
 @section('content')
 
 <!-- Scripts -->
+@vite('resources/js/app.js') 
 
-<head>
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <!-- ... Otras etiquetas head ... -->
-   
-    @vite('resources/js/app.js')
-    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.css">
-    
-</head>
-<body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Dashboard') }}</div>
+    <div class="row justify-content-center my-5">
+        <div class="col-md-8">
+            <div class="tile">
+                <div class="tile-body">
+                    <div class="card-header text-center fs-4">{{ __('Base De Datos Body Live') }}</div>
 
-                    <div class="card-body" id="app">
-                    <example-component></example-component>
-                    
-                    </div>
+                    <div class="card-body my-4" id="tableApp">
+                        <ExampleComponent></ExampleComponent>
+                        
+                    </div> 
                 </div>
             </div>
         </div>
     </div>
 
-    
-</body>
+    <!-- Include the DataTables JS after Vue.js -->
+  
+    <script src="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.js"></script>
 
-<script src="{{ mix('js/app.js') }}"></script>
-
-    
 
 @endsection
+    
+
 
 
 

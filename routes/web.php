@@ -22,3 +22,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('estudiantes/search/{search}', [App\Http\Controllers\Estudiantes\ConsultaListadoEstudiantesController::class, 'index'])->name('listar_estudiantes');
 Route::get('estudiantes/search', [App\Http\Controllers\Estudiantes\ConsultaListadoEstudiantesController::class, 'index'])->name('listar_estudiantes');
+Route::post('estudiantes', [App\Http\Controllers\Estudiantes\CrearEstudianteController::class, 'store'])->name('crear_usuario');
+

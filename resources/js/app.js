@@ -4,19 +4,33 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+
+
 import './bootstrap';
 import { createApp } from 'vue';
 import ExampleComponent from './components/ExampleComponent.vue';
+
+
+
+
+
+
+
+// import { library } from '@fortawesome/fontawesome-svg-core'
+// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+// import { faEye, faPen, faTrash, faCheck, faBan, faUser, faCamera, faFloppyDisk, faRotate, faArrowLeft, faCalendar, faAddressCard, faPhone, faDumbbell,faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready
  * to use in your application's views. An example is included for you.
  */
 
-const app = createApp({});
+const tableApp = createApp(ExampleComponent);
 
 
-app.component('example-component', ExampleComponent);
+// app.component('example-component', ExampleComponent);
+// library.add(faEye, faPen, faTrash, faCheck, faBan, faUser, faCamera, faFloppyDisk, faRotate, faArrowLeft, faCalendar, faAddressCard, faPhone, faDumbbell,faArrowRightFromBracket )
 
 /**
  * The following block of code may be used to automatically register your
@@ -26,9 +40,9 @@ app.component('example-component', ExampleComponent);
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// Object.entries(import.meta.glob('./**/*.vue', { eager: true })).forEach(([path, definition]) => {
-//     app.component(path.split('/').pop().replace(/\.\w+$/, ''), definition.default);
-// });
+//  Object.entries(import.meta.glob('./**/*.vue', { eager: true })).forEach(([path, definition]) => {
+//      app.component(path.split('/').pop().replace(/\.\w+$/, ''), definition.default);
+//  });
 
 /**
  * Finally, we will attach the application instance to a HTML element with
@@ -36,4 +50,4 @@ app.component('example-component', ExampleComponent);
  * scaffolding. Otherwise, you will need to add an element yourself.
  */
 
-app.mount('#app');
+tableApp.mount('#tableApp');

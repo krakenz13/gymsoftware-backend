@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src ="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweealert2@11.7.5/dist/sweetalert2.min.css">
     <title>Login</title>
   </head>
   <body>
@@ -59,7 +62,7 @@
             </div>
           </div>
           <div class="mb-3 btn-container d-grid">
-            <button class="btn btn-primary btn-block"><i class="bi bi-box-arrow-in-right me-2 fs-5"></i>Ingresar</button>
+            <button class="btn btn-primary btn-block" id="alert"><i class="bi bi-box-arrow-in-right me-2 fs-5"></i>Ingresar</button>
           </div>
         </form>
         <form class="forget-form" action="index.html">
@@ -83,12 +86,17 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
     <script type="text/javascript">
+    
       // Login Page Flipbox control
       $('.login-content [data-toggle="flip"]').click(function() {
       	$('.login-box').toggleClass('flipped');
       	return false;
       });
+  
     </script>
   </body>
 </html>
+
+
+
 

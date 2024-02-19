@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -37,8 +36,7 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <script src="{{asset('js/app.js')}}" defer></script>
-    <script src="{{asset('js/main.js')}}" defer></script>
+    
 </head>
 <body class="app sidebar-mini">
  <header class="app-header"><a class="app-header__logo" href="index.html">body live</a>
@@ -103,7 +101,7 @@
  @auth
  <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
-      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="{{ asset('img/user2.png') }}" alt="User Image">
+      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://cdn2.iconfinder.com/data/icons/male-avatars/512/avatars_accounts___man_male_people_person_hoodie_casual.png" alt="User Image">
         <div>
         @auth
           <p class="app-sidebar__user-name">{{ Auth::user()->name }}</p>

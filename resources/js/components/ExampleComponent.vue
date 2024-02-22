@@ -1,6 +1,6 @@
 <template>
   <div class="d-inline-flex ">
-    <button @click="abrirModalCrear(estudiante)" type="button" data-bs-toggle="modal"
+    <button  type="button" data-bs-toggle="modal"
       data-bs-target="#staticBackdropCreated" class="d-inline-flex col btn btn-primary m-3">
       <i class="bi bi-person-add"></i>Crear Usuario
     </button>
@@ -31,13 +31,13 @@
 
           <td>
             <div class="d-inline-flex ">
-              <button  type="button" data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop" class="d-inline-flex col btn btn-primary m-1">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                class="d-inline-flex col btn btn-primary m-1">
                 <i class="bi bi-eye me-2"></i>
               </button>
 
-              <button type="button" data-bs-toggle="modal"
-                data-bs-target="#staticBackdropEdit" class="d-inline-flex col btn btn-success m-1">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdropEdit"
+                class="d-inline-flex col btn btn-success m-1">
                 <i class="bi bi-pen me-2"></i>
               </button>
 
@@ -75,41 +75,43 @@
           </div>
           <form>
             <div class=" d-grid col-6 mx-auto mb-3">
-              <img v-if="this.foto"  height="150" :src="this.foto"  id="fotoimg" class="img-thumbnail" alt="">
+              <img v-if="this.foto" height="150" :src="this.foto"  id="fotoimg" class="img-thumbnail" alt="">
               <img v-else height="150"
                 src="https://cdn3.iconfinder.com/data/icons/leto-user-group/64/__man_user_person-512.png"
-                class="img-thumbnail" id="fotoimg"> 
+                class="img-thumbnail" id="fotoimg">
             </div>
             <div class="input-group  mb-3">
               <label for="fristname" class="input-group-text"><i class="bi bi-person-fill"></i></label>
               <div class="col-sm-10 text-center">
-                <input type="text"  v-model="CrearUsuario.nombre" class="form-control" name="fristname" placeholder="Ingrese su Nombre">
+                <input type="text" v-model="CrearUsuario.nombre" class="form-control" name="fristname"
+                  placeholder="Ingrese su Nombre">
               </div>
             </div>
             <div class="input-group mb-3">
               <label for="lastname" class="input-group-text"><i class="bi bi-people-fill"></i></label>
               <div class="col-sm-10">
-                <input type="text"  v-model="CrearUsuario.apellido" class="form-control" id="lastname" name="lastname" placeholder="Ingrese su apellido">
+                <input type="text" v-model="CrearUsuario.apellido" class="form-control" id="nombre" name="lastname"
+                  placeholder="Ingrese su apellido">
               </div>
             </div>
             <div class="input-group mb-3">
               <label for="cedula" class="input-group-text"><i class="bi bi-person-vcard-fill"></i></label>
               <div class="col-sm-10">
-                <input type="text"  v-model="CrearUsuario.cedula" class="form-control" id="cedula" name="cedula"
+                <input type="text" v-model="CrearUsuario.cedula" class="form-control" id="cedula" name="cedula"
                   placeholder="Ingrese su número de cédula">
               </div>
             </div>
             <div class="input-group  mb-3">
               <label for="phone" class="input-group-text"><i class="bi bi-telephone-inbound-fill"></i></label>
               <div class="col-sm-10">
-                <input type="text"  v-model="CrearUsuario.telefono" class="form-control" id="phone" name="phone"
+                <input type="text" v-model="CrearUsuario.telefono" class="form-control" id="telefono" name="phone"
                   placeholder="Ingrese su número de teléfono">
               </div>
             </div>
             <div class=" input-group mb-3">
               <span class="input-group-text"><i class="bi bi-camera-fill"></i></span>
               <div class="col-sm-10">
-                <input v-on:change="previsualizarFoto" type="file" accept="image/png, image/jpeg, image/gif"
+                <input v-on:change="previsualizarFoto"  type="file" accept="image/png, image/jpeg, image/gif"
                   class="form-control">
 
               </div>
@@ -120,7 +122,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="submit" @click.prevent="crear" class="btn btn-success" data-bs-dismiss="modal">Guardar</button>
+          <button type="submit" @click.prevent="crear" class="btn btn-success" data-bs-dismiss="modal">Registrar</button>
 
         </div>
       </div>
@@ -137,7 +139,7 @@
         </div>
         <div class="modal-body">
 
-          <div v-if="this.cargando" class="text-center">
+          <div class="text-center">
             <div class="spinner-border mb-3 " style="width: 3rem; height: 3rem;" role="status">
             </div>
             <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
@@ -153,28 +155,29 @@
             <div class="input-group  mb-3">
               <label for="fristname" class="input-group-text"><i class="bi bi-person-fill"></i></label>
               <div class="col-sm-10 text-center">
-                <input type="text" class="form-control" v-model="CrearUsuario.nombre" name="fristname" placeholder="Ingrese su Nombre">
+                <input type="text" class="form-control " disabled v-model="CrearUsuario.nombre" id="nombre"
+                  name="fristname" placeholder="Ingrese su Nombre">
               </div>
             </div>
             <div class="input-group mb-3">
               <label for="lastname" class="input-group-text"><i class="bi bi-people-fill"></i></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" v-text="apellido" name="lastname"
-                  placeholder="Ingrese su apellido">
+                <input type="text" class="form-control" disabled v-model="CrearUsuario.apellido" id="apellido"
+                  name="lastname" placeholder="Ingrese su apellido">
               </div>
             </div>
             <div class="input-group mb-3">
               <label for="cedula" class="input-group-text"><i class="bi bi-person-vcard-fill"></i></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" v-text="cedula" name="cedula"
+                <input type="text" class="form-control" disabled v-model="CrearUsuario.cedula" id="cedula" name="cedula"
                   placeholder="Ingrese su número de cédula">
               </div>
             </div>
             <div class="input-group  mb-3">
               <label for="phone" class="input-group-text"><i class="bi bi-telephone-inbound-fill"></i></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" v-text="telefono" name="phone"
-                  placeholder="Ingrese su número de teléfono">
+                <input type="text" class="form-control" disabled v-model="CrearUsuario.telefono" id="telefono"
+                  name="phone" placeholder="Ingrese su número de teléfono">
               </div>
             </div>
 
@@ -215,26 +218,28 @@
             <div class="input-group  mb-3">
               <label for="fristname" class="input-group-text"><i class="bi bi-person-fill"></i></label>
               <div class="col-sm-10 text-center">
-                <input type="text" class="form-control" name="fristname" placeholder="Ingrese su Nombre">
+                <input type="text" v-model="CrearUsuario.nombre" class="form-control" name="nombre"
+                  placeholder="Ingrese su Nombre">
               </div>
             </div>
             <div class="input-group mb-3">
               <label for="lastname" class="input-group-text"><i class="bi bi-people-fill"></i></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Ingrese su apellido">
+                <input type="text" v-model="CrearUsuario.apellido" class="form-control" id="apellido" name="lastname"
+                  placeholder="Ingrese su apellido">
               </div>
             </div>
             <div class="input-group mb-3">
               <label for="cedula" class="input-group-text"><i class="bi bi-person-vcard-fill"></i></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="cedula" name="cedula"
+                <input type="text" v-model="CrearUsuario.cedula" class="form-control" id="cedula" name="cedula"
                   placeholder="Ingrese su número de cédula">
               </div>
             </div>
             <div class="input-group  mb-3">
               <label for="phone" class="input-group-text"><i class="bi bi-telephone-inbound-fill"></i></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="phone" name="phone"
+                <input type="text" v-model="CrearUsuario.telefono" class="form-control" id="telefono" name="phone"
                   placeholder="Ingrese su número de teléfono">
               </div>
             </div>
@@ -252,7 +257,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
-          <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Guardar</button>
+          <button type="submit" @click.prevent="crear" class="btn btn-success" data-bs-dismiss="modal">Guardar</button>
 
         </div>
       </div>
@@ -274,7 +279,8 @@ import print from 'datatables.net-buttons-bs5'
 import pdfFonts from "pdfmake/build/vfs_fonts";
 import 'datatables.net-buttons/js/dataTables.buttons'
 import 'datatables.net-buttons/js/buttons.html5'
-import { swal } from 'sweetalert2/dist/sweetalert2';
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 
 
@@ -283,6 +289,7 @@ import { swal } from 'sweetalert2/dist/sweetalert2';
 
 window.JSZip = jszip
 
+DataTable.use(Swal)
 
 DataTable.use(DataTablesCore);
 DataTable.use(datatable);
@@ -302,7 +309,7 @@ DataTable.use(pdfFonts);
 export default {
   data() {
     return {
-      CrearUsuario: {foto:'' ,nombre:'', apellido:'', cedula:'',telefono:''},
+      CrearUsuario: { foto: '', nombre: '', apellido: '', cedula: '', telefono: '' },
       usuarios: [],
       dataTable: null,
       pdfMake: pdfMake
@@ -321,6 +328,7 @@ export default {
 
   },
   watch: {
+    usuarios:'initializeDataTable',
     usuarios: function () {
       // Destruir la instancia DataTable existente y recrearla con los nuevos datos
       if (this.dataTable) {
@@ -370,19 +378,50 @@ export default {
       axios.get('http://127.0.0.1:8000/estudiantes/search').then((res) => {
         this.usuarios = res.data;
       });
-      
+
     },
-    crear(){
-      axios.post('http://127.0.0.1:8000/estudiantes',this.CrearUsuario).then((res) => {
-        this.usuarios = res.data;
-        $('#staticBackdropCreated').modal('hide');
-        swal("Felicides!", "Usuario Creado Exitosamente", "success");
-      }).catch(function() {
-        swal("Error!", "Intentelo De Nuevo! ", "error");
+    crear() {
+      event.preventDefault()
+      var miFoto = document.getElementById("fotoimg");
+      this.foto = miFoto.src;
+      console.log(this.CrearUsuario);
+      axios.post('http://127.0.0.1:8000/estudiantes', this.CrearUsuario)
+    .then((res) => {
+      this.getEstudiantes();
+      $('#staticBackdropCreated').modal('hide');
+      
+      Swal.fire({
+        title: '¡Felicidades!',
+        text: 'Usuario Creado Exitosamente',
+        icon: 'success',
+        confirmButtonText: '¡Entendido!'
       });
       
+         
+    })
+    .catch(() => {
+      Swal.fire({
+        title: '¡Error!',
+        text: '500 (Error En Su Servidor)',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+     
+    });
+
+},
+    previsualizarFoto(event) {
+      var reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+      reader.onload = () => {
+        var miFoto = document.getElementById("fotoimg");
+        miFoto.src = reader.result;
+        this.foto = miFoto.src;
+
+      }
      
     }
+    
   },
 };
 </script>

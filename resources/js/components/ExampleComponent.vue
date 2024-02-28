@@ -1,8 +1,8 @@
 <template>
   <div class="d-inline-flex ">
-    <button  type="button" data-bs-toggle="modal"
-      data-bs-target="#staticBackdropCreated" class="d-inline-flex col btn btn-primary m-3">
-      <i class="bi bi-person-add"></i>Crear Usuario
+    <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdropCreated"
+      class="d-inline-flex col btn btn-primary m-4">
+      <i class="bi bi-person-add "></i>Crear Usuario
     </button>
   </div>
   <div class="table-responsive">
@@ -28,26 +28,8 @@
           <td>{{ estudiante.cedula }}</td>
           <td>{{ estudiante.telefono }}</td>
           <td>{{ new Date(estudiante.created_at).toLocaleDateString('en-US') }}</td>
-
           <td>
-            <div class="d-inline-flex ">
-              <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-                class="d-inline-flex col btn btn-primary m-1">
-                <i class="bi bi-eye me-2"></i>
-              </button>
-
-              <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdropEdit"
-                class="d-inline-flex col btn btn-success m-1">
-                <i class="bi bi-pen me-2"></i>
-              </button>
-
-
-              <button @click="swal" class="d-inline-flex col btn btn-danger m-1">
-                <i class="bi bi-trash me-2"></i>
-              </button>
-
-            </div>
-
+            <modal />
           </td>
 
 
@@ -56,6 +38,7 @@
       </tbody>
     </table>
   </div>
+
   <!-- created User -->
   <div class="modal fade" id="staticBackdropCreated" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -67,15 +50,12 @@
         </div>
         <div class="modal-body">
 
-          <div v-if="this.cargando" class="text-center">
-            <div class="spinner-border mb-3 " style="width: 3rem; height: 3rem;" role="status">
-            </div>
-            <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
-            </div>
+          <div class="text-center">
+            <!-- puede ir un cargando para modal -->
           </div>
           <form>
             <div class=" d-grid col-6 mx-auto mb-3">
-              <img v-if="this.foto" height="150" :src="this.foto"  id="fotoimg" class="img-thumbnail" alt="">
+              <img v-if="foto" height="150" :src="this.foto" id="fotoimg" class="img-thumbnail" alt="">
               <img v-else height="150"
                 src="https://cdn3.iconfinder.com/data/icons/leto-user-group/64/__man_user_person-512.png"
                 class="img-thumbnail" id="fotoimg">
@@ -111,7 +91,7 @@
             <div class=" input-group mb-3">
               <span class="input-group-text"><i class="bi bi-camera-fill"></i></span>
               <div class="col-sm-10">
-                <input v-on:change="previsualizarFoto"  type="file" accept="image/png, image/jpeg, image/gif"
+                <input v-on:change="previsualizarFoto" type="file" accept="image/png, image/jpeg, image/gif"
                   class="form-control">
 
               </div>
@@ -134,20 +114,17 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header bg-primary">
-          <h1 class="modal-title fs-5 " id="staticBackdropLabel">Vista Del Usuauario</h1>
+          <h1 class="modal-title fs-5 " id="staticBackdropLabel">Vista Del Usuario</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
 
           <div class="text-center">
-            <div class="spinner-border mb-3 " style="width: 3rem; height: 3rem;" role="status">
-            </div>
-            <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
-            </div>
+
           </div>
           <form>
             <div class=" d-grid col-6 mx-auto mb-3">
-              <img v-if="this.foto" height="150" :src="this.foto" id="fotoimg" class="img-thumbnail" alt="">
+              <img v-if="foto" height="150" :src="this.foto" id="fotoimg" class="img-thumbnail" alt="">
               <img v-else height="150"
                 src="https://cdn3.iconfinder.com/data/icons/leto-user-group/64/__man_user_person-512.png"
                 class="img-thumbnail" id="fotoimg">
@@ -155,28 +132,28 @@
             <div class="input-group  mb-3">
               <label for="fristname" class="input-group-text"><i class="bi bi-person-fill"></i></label>
               <div class="col-sm-10 text-center">
-                <input type="text" class="form-control " disabled v-model="CrearUsuario.nombre" id="nombre"
+                <input type="text" class="form-control " disabled v-model="nombre" id="nombre"
                   name="fristname" placeholder="Ingrese su Nombre">
               </div>
             </div>
             <div class="input-group mb-3">
               <label for="lastname" class="input-group-text"><i class="bi bi-people-fill"></i></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" disabled v-model="CrearUsuario.apellido" id="apellido"
+                <input type="text" class="form-control" disabled v-model="apellido" id="apellido"
                   name="lastname" placeholder="Ingrese su apellido">
               </div>
             </div>
             <div class="input-group mb-3">
               <label for="cedula" class="input-group-text"><i class="bi bi-person-vcard-fill"></i></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" disabled v-model="CrearUsuario.cedula" id="cedula" name="cedula"
+                <input type="text" class="form-control" disabled v-model="cedula" id="cedula" name="cedula"
                   placeholder="Ingrese su número de cédula">
               </div>
             </div>
             <div class="input-group  mb-3">
               <label for="phone" class="input-group-text"><i class="bi bi-telephone-inbound-fill"></i></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" disabled v-model="CrearUsuario.telefono" id="telefono"
+                <input type="text" class="form-control" disabled v-model="telefono" id="telefono"
                   name="phone" placeholder="Ingrese su número de teléfono">
               </div>
             </div>
@@ -197,20 +174,16 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header bg-success">
-          <h1 class="modal-title fs-5 " id="staticBackdropLabel">Editar Usuauario</h1>
+          <h1 class="modal-title fs-5 " id="staticBackdropLabel">Editar Usuario</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
 
-          <div v-if="this.cargando" class="text-center">
-            <div class="spinner-border mb-3 " style="width: 3rem; height: 3rem;" role="status">
-            </div>
-            <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
-            </div>
+          <div class="text-center">
           </div>
           <form>
             <div class=" d-grid col-6 mx-auto mb-3">
-              <img v-if="this.foto" height="150" :src="this.foto" id="fotoimg" class="img-thumbnail" alt="">
+              <img v-if="foto" height="150" :src="this.foto" id="fotoimg" class="img-thumbnail" alt="">
               <img v-else height="150"
                 src="https://cdn3.iconfinder.com/data/icons/leto-user-group/64/__man_user_person-512.png"
                 class="img-thumbnail" id="fotoimg">
@@ -218,28 +191,28 @@
             <div class="input-group  mb-3">
               <label for="fristname" class="input-group-text"><i class="bi bi-person-fill"></i></label>
               <div class="col-sm-10 text-center">
-                <input type="text" v-model="CrearUsuario.nombre" class="form-control" name="nombre"
+                <input type="text" v-model="nombre" class="form-control" name="nombre"
                   placeholder="Ingrese su Nombre">
               </div>
             </div>
             <div class="input-group mb-3">
               <label for="lastname" class="input-group-text"><i class="bi bi-people-fill"></i></label>
               <div class="col-sm-10">
-                <input type="text" v-model="CrearUsuario.apellido" class="form-control" id="apellido" name="lastname"
+                <input type="text" v-model="apellido" class="form-control" id="apellido" name="lastname"
                   placeholder="Ingrese su apellido">
               </div>
             </div>
             <div class="input-group mb-3">
               <label for="cedula" class="input-group-text"><i class="bi bi-person-vcard-fill"></i></label>
               <div class="col-sm-10">
-                <input type="text" v-model="CrearUsuario.cedula" class="form-control" id="cedula" name="cedula"
+                <input type="text" v-model="cedula" class="form-control" id="cedula" name="cedula"
                   placeholder="Ingrese su número de cédula">
               </div>
             </div>
             <div class="input-group  mb-3">
               <label for="phone" class="input-group-text"><i class="bi bi-telephone-inbound-fill"></i></label>
               <div class="col-sm-10">
-                <input type="text" v-model="CrearUsuario.telefono" class="form-control" id="telefono" name="phone"
+                <input type="text" v-model="telefono" class="form-control" id="telefono" name="phone"
                   placeholder="Ingrese su número de teléfono">
               </div>
             </div>
@@ -268,29 +241,21 @@
 <script>
 import axios from 'axios';
 import $ from 'jquery';
-
-
+import Swal from 'sweetalert2';
+import modal from './modal.vue';
 import DataTable from 'datatables.net-vue3';
 import datatable from 'datatables.net-bs5';
 import DataTablesCore from 'datatables.net';
 import jszip from 'jszip';
 import pdfmake from 'pdfmake/build/pdfmake';
-import print from 'datatables.net-buttons-bs5'
-import pdfFonts from "pdfmake/build/vfs_fonts";
-import 'datatables.net-buttons/js/dataTables.buttons'
-import 'datatables.net-buttons/js/buttons.html5'
-import Swal from 'sweetalert2';
+import print from 'datatables.net-buttons-bs5';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+import 'datatables.net-buttons/js/dataTables.buttons';
+import 'datatables.net-buttons/js/buttons.html5';
 import 'sweetalert2/dist/sweetalert2.min.css';
 
-
-
-
-
-
-window.JSZip = jszip
-
-DataTable.use(Swal)
-
+window.JSZip = jszip;
+DataTable.use(Swal);
 DataTable.use(DataTablesCore);
 DataTable.use(datatable);
 DataTable.use(jszip);
@@ -299,17 +264,14 @@ DataTable.use(print);
 DataTable.use(pdfFonts);
 
 
-
-
-
-
-
-
-
 export default {
+  components: {
+    modal
+  },
   data() {
     return {
-      CrearUsuario: { foto: '', nombre: '', apellido: '', cedula: '', telefono: '' },
+      CrearUsuario: { nombre: '', apellido: '', cedula: '', telefono: '' },
+      foto: null,
       usuarios: [],
       dataTable: null,
       pdfMake: pdfMake
@@ -322,54 +284,49 @@ export default {
     this.getEstudiantes();
     this.pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
-    // const route = useRoute();
-    // this.id = route.params.id;
-    // this.url += '/' + this.id;
-
   },
   watch: {
-    usuarios:'initializeDataTable',
-    usuarios: function () {
-      // Destruir la instancia DataTable existente y recrearla con los nuevos datos
-      if (this.dataTable) {
-        this.dataTable.destroy();
-      }
-      this.$nextTick(() => {
-        this.initializeDataTable();
-      });
-    },
+    usuarios: 'initializeDataTable',
+
   },
   methods: {
 
     initializeDataTable() {
-      this.dataTable = $('#sampleTable').DataTable({
-        dom: "<'row'<'col-sm-12 mb-3 text-center'B>><'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6 'f>>" +
-          "<'row'<'col-sm-12'tr>>" +
-          "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 text-center col-md-7'p>>",
-        buttons: [
-          {
-            "extend": "copyHtml5",
-            "text": "Copiar",
-            "titleAttr": "Copiar",
-            "ClassName": "btn btn-secundary"
-          },
-          {
-            "extend": "excelHtml5",
-            "text": "Excel",
-            "titleAttr": "exportar a excel",
-            "className": "btn btn-success"
-          },
-          {
-            "extend": "pdfHtml5",
-            "text": "Pdf",
-            "titleAttr": "exportar pdf",
-            "className": "btn btn-danger"
-          },
+
+      if (this.dataTable) {
+        this.dataTable.destroy();
+      }
+      this.$nextTick(() => {
+        this.dataTable = $('#sampleTable').DataTable({
+          dom: "<'row'<'col-sm-12 mb-3 text-center'B>><'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6 'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 text-center col-md-7'p>>",
+          buttons: [
+            {
+              "extend": "copyHtml5",
+              "text": "Copiar",
+              "titleAttr": "Copiar",
+              "ClassName": "btn btn-secundary"
+            },
+            {
+              "extend": "excelHtml5",
+              "text": "Excel",
+              "titleAttr": "exportar a excel",
+              "className": "btn btn-success"
+            },
+            {
+              "extend": "pdfHtml5",
+              "text": "Pdf",
+              "titleAttr": "exportar pdf",
+              "className": "btn btn-danger"
+            },
 
 
-        ]
+          ]
 
+        });
       });
+
 
 
     },
@@ -377,39 +334,42 @@ export default {
     getEstudiantes() {
       axios.get('http://127.0.0.1:8000/estudiantes/search').then((res) => {
         this.usuarios = res.data;
+        console.log(this.usuarios);
+      }).catch((error) => {
+        console.error("Error al obtener estudiantes:", error);
       });
 
     },
-    crear() {
+    crear(event) {
       event.preventDefault()
       var miFoto = document.getElementById("fotoimg");
       this.foto = miFoto.src;
-      console.log(this.CrearUsuario);
       axios.post('http://127.0.0.1:8000/estudiantes', this.CrearUsuario)
-    .then((res) => {
-      this.getEstudiantes();
-      $('#staticBackdropCreated').modal('hide');
-      
-      Swal.fire({
-        title: '¡Felicidades!',
-        text: 'Usuario Creado Exitosamente',
-        icon: 'success',
-        confirmButtonText: '¡Entendido!'
-      });
-      
-         
-    })
-    .catch(() => {
-      Swal.fire({
-        title: '¡Error!',
-        text: '500 (Error En Su Servidor)',
-        icon: 'error',
-        confirmButtonText: 'OK'
-      });
-     
-    });
+        .then((res) => {
+          this.getEstudiantes();
+          this.usuarios = res.data;
+          $('#staticBackdropCreated').modal('hide');
 
-},
+          Swal.fire({
+            title: '¡Felicidades!',
+            text: 'Usuario Creado Exitosamente',
+            icon: 'success',
+            confirmButtonText: '¡Entendido!'
+          });
+
+
+        })
+        .catch(() => {
+          Swal.fire({
+            title: '¡Error!',
+            text: '500 (Error En Su Servidor)',
+            icon: 'error',
+            confirmButtonText: 'OK'
+          });
+
+        });
+
+    },
     previsualizarFoto(event) {
       var reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]);
@@ -419,9 +379,9 @@ export default {
         this.foto = miFoto.src;
 
       }
-     
+
     }
-    
+
   },
 };
 </script>

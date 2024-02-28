@@ -16,6 +16,10 @@ import ExampleComponent from './components/ExampleComponent.vue';
 
 
 
+
+
+
+
 // import { library } from '@fortawesome/fontawesome-svg-core'
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // import { faEye, faPen, faTrash, faCheck, faBan, faUser, faCamera, faFloppyDisk, faRotate, faArrowLeft, faCalendar, faAddressCard, faPhone, faDumbbell,faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'

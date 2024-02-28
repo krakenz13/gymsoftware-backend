@@ -23,4 +23,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('estudiantes/search/{search}', [App\Http\Controllers\Estudiantes\ConsultaListadoEstudiantesController::class, 'index']);
 Route::get('estudiantes/search', [App\Http\Controllers\Estudiantes\ConsultaListadoEstudiantesController::class, 'index']);
 Route::post('estudiantes', [App\Http\Controllers\Estudiantes\CrearEstudianteController::class, 'store']);
+Route::put('estudiantes/{id}', [App\Http\Controllers\Estudiantes\ActualizarEstudianteController::class, 'update']);
+
 

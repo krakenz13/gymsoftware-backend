@@ -4,7 +4,7 @@
 
 <!-- Scripts -->
 @vite('resources/js/app.js') 
-
+<main>
     <div class="row justify-content-center my-5">
         <div class="col-md-8">
             <div class="tile">
@@ -23,7 +23,7 @@
     <!-- Include the DataTables JS after Vue.js -->
   
     <script src="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.js"></script>
-
+</main>
 
 @endsection
     

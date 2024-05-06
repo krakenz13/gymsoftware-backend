@@ -24,5 +24,6 @@ Route::get('estudiantes/search/{search}', [App\Http\Controllers\Estudiantes\Cons
 Route::get('estudiantes/search', [App\Http\Controllers\Estudiantes\ConsultaListadoEstudiantesController::class, 'index']);
 Route::post('estudiantes', [App\Http\Controllers\Estudiantes\CrearEstudianteController::class, 'store']);
 Route::put('estudiantes/{id}', [App\Http\Controllers\Estudiantes\ActualizarEstudianteController::class, 'update']);
+Route::delete('estudiantes/{id}', [App\Http\Controllers\Estudiantes\EliminarEstudianteController::class, 'destroy']);
 
 

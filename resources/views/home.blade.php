@@ -5,13 +5,13 @@
 <!-- Scripts -->
 @vite('resources/js/app.js') 
 <main>
-    <div class="row justify-content-center my-5">
-        <div class="col-md-8">
+    <div class="row justify-content-center my-5 ">
+        <div class="col-sm-8 col-lg-8">
             <div class="tile">
                 <div class="tile-body">
                     <div class="card-header text-center fs-4">{{ __('Base De Datos Body Live') }}</div>
 
-                    <div class="card-body my-4" id="tableApp">
+                    <div class="card-body col-md-12  my-4" id="tableApp">
                         <ExampleComponent></ExampleComponent>
                         
                     </div> 

@@ -36,7 +36,8 @@ class ConsultaListadoEstudiantesController extends Controller
             'estudiantes.nombre', 
             'estudiantes.apellido', 
             'estudiantes.telefono', 
-            'estudiantes.foto'
+            'estudiantes.foto',
+            'estudiantes.created_at'
             // 'em.fecha_inicio',
             // 'em.estado',
             // 'em.mentoria_id',

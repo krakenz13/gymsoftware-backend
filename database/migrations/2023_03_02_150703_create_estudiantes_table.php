@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('estudiantes', function (Blueprint $table) {
             $table->id();
-            $table->string("nombre");
-            $table->string("apellido");
-            $table->string('foto')->default('default.jpg');
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->string('cedula');
+            $table->string('telefono');
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }
@@ -27,9 +29,11 @@ return new class extends Migration
     {
         Schema::create('estudiantes', function (Blueprint $table) {
             $table->id();
-            $table->string("nombre");
-            $table->string("apellido");
-            $table->longtext("foto");
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->string('cedula');
+            $table->string('telefono');
+            $table->longtext('foto');
             $table->timestamps();
         });
     }

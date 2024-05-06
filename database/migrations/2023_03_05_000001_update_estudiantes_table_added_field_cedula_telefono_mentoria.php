@@ -12,9 +12,9 @@ return new class extends Migration
     public function up()
     {
         Schema::table('estudiantes', function (Blueprint $table) {
-            $table->string("cedula")->after("foto");
-            $table->string("telefono")->after("cedula");
-            $table->string("mentoria")->after("telefono");
+            $table->string("cedula");
+            $table->string("telefono");
+            $table->string("mentoria");
         });
     }
 
@@ -23,10 +23,10 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('estudiantes', function($table) {
-            $table->dropColumn("cedula");
-            $table->dropColumn("telefono");
-            $table->dropColumn("mentoria");
+        Schema::table('estudiantes', function (Blueprint $table) {
+            $table->string("cedula")->after("foto");
+            $table->string("telefono")->after("cedula");
+            $table->string("mentoria")->after("telefono");
         });
     }
 };

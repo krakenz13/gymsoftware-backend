@@ -14,12 +14,35 @@ class CrearEstudianteController extends Controller
      */
     public function store(Request $request)
     {
-        $inpunts = $request->input();
-        $e = Estudiante::create($inpunts);
+        
+        $inputs = $request->all();
+
+        
+        if ($request->hasFile('image')) {
+        
+            $image = $request->file('image');
+
+           
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+
+            
+            Storage::disk('public')->put($imageName, file_get_contents($image));
+
+
+            $inputs['image'] = $imageName;
+        }
+
+       
+        $estudiante = Estudiante::create($inputs);
+
+      
         return response()->json([
-            'data' => $e,
-            'mensaje' => " estudiante actualizado con exito",
+            'data' => $estudiante,
+            'mensaje' => 'Estudiante creado exitosamente',
         ]);
+        
+    
+        
     }
 
 }

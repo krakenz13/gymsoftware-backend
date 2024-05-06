@@ -8,7 +8,7 @@
 
 import './bootstrap';
 import { createApp } from 'vue';
-import ExampleComponent from './components/ExampleComponent.vue';
+import homeUsers from './components/homeUsers.vue';
 
 
 
@@ -30,7 +30,7 @@ import ExampleComponent from './components/ExampleComponent.vue';
  * to use in your application's views. An example is included for you.
  */
 
-const tableApp = createApp(ExampleComponent);
+const tableApp = createApp(homeUsers);
 
 
 // app.component('example-component', ExampleComponent);

@@ -12,7 +12,7 @@
  */
 :root,
 [data-bs-theme=light] {
-  --bs-blue: #0d6efd;
+  --bs-blue: #fd0d0d;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
   --bs-pink: #d63384;
@@ -13458,7 +13458,7 @@ textarea.form-control-lg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #0d6efd;
+  background-color: #fd0d0d;
   z-index: 1030;
   padding-right: 15px;
 }
@@ -13493,7 +13493,7 @@ textarea.form-control-lg {
             flex: 0 0 auto;
     display: block;
     width: 230px;
-    background-color: #0d6efd;
+    background-color: #fd0d0d;
   }
 }
 .app-header__logo:focus, .app-header__logo:hover {
@@ -14110,7 +14110,7 @@ textarea.form-control-lg {
 
 .material-half-bg {
   height: 100vh;
-  background-color: #e7e7e7;
+  background-color: #f8f9fa;
   position: fixed;
   top: 0;
   left: 0;
@@ -14119,7 +14119,7 @@ textarea.form-control-lg {
   z-index: -1;
 }
 .material-half-bg .cover {
-  background-color: #0d6efd;
+  background-color: #fd0d0d;
   height: 50vh;
 }
 
@@ -14569,7 +14569,7 @@ textarea.form-control-lg {
 .login-content .logo {
   margin-bottom: 40px;
   font-family: "Niconne";
-  color: #fff;
+  color: #fcfcfd;
 }
 .login-content .logo h1, .login-content .logo .h1 {
   font-size: 52px;

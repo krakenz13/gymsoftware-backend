@@ -20,7 +20,7 @@
     </section>
     <section class="login-content">
       <div class="logo">
-        <h1>App Body Live</h1>
+        <h1>Serve X</h1>
       </div>
       <div class="login-box">
       <h3 class="login-head"><i class="bi bi-person me-2"></i>Usuario</h3>
@@ -63,7 +63,7 @@
             </div>
           </div>
           <div class="mb-3 btn-container d-grid">
-            <button  class="btn btn-primary btn-block" id="mostrarSweetAlert"><i class="bi bi-box-arrow-in-right me-2 fs-5"></i>Ingresar</button>
+            <button  class="btn btn-danger btn-block" id="mostrarSweetAlert"><i class="bi bi-box-arrow-in-right me-2 fs-5"></i>Ingresar</button>
           </div>
         </form>
         <form class="forget-form" action="index.html">
@@ -73,7 +73,7 @@
             <input class="form-control" type="text" placeholder="Email">
           </div>
           <div class="mb-3 btn-container d-grid">
-            <button class="btn btn-primary btn-block"><i class="bi bi-unlock me-2 fs-5"></i>RESET</button>
+            <button class="btn btn-danger btn-block"><i class="bi bi-unlock me-2 fs-5"></i>RESET</button>
           </div>
           <div class="mb-3 mt-3">
             <p class="semibold-text mb-0"><a href="#" data-toggle="flip"><i class="bi bi-chevron-left me-1"></i> Back to Login</a></p>

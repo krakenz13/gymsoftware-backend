@@ -2,52 +2,17 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Subscription extends Model
 {
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = 'subscriptions'; 
+    use HasFactory;
 
-    /**
-     
-     *
-     * @var array
-     */
-    protected $fillable = [
-        
-            'id',
-            'mentoria',
-            'duracion'
-        ];
-        
-  
+    protected $fillable = ['user_id', 'type', 'start_date', 'end_date'];
 
-    /**
-     *
-     *
-     * @var array
-     */
-    protected $casts = [
-        'start_date' => 'datetime', 
-    ];
-
-    /**
-     * 
-     *
-     * @return \DateTime
-     */
-    public function calculateExpirationDate()
+    public function user()
     {
-        $startDate = $this->start_date;
-        $expirationDate = $startDate->addMonths($this->duration_months);
-        
-        return $expirationDate;
+        return $this->belongsTo(User::class);
     }
-
-    
 }

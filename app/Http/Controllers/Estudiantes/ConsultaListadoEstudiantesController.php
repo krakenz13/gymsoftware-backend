@@ -24,6 +24,7 @@ class ConsultaListadoEstudiantesController extends Controller
         ->orWhere('estudiantes.apellido', 'LIKE','%'.$search.'%')
         ->orWhere('estudiantes.cedula', 'LIKE','%'.$search.'%')
         ->orWhereRaw("CONCAT(estudiantes.nombre,' ', estudiantes.apellido) LIKE '%".$search."%'");
+        
 
         foreach ($arraySearch as $item) {
             $students = $students->orWhere('nombre', 'LIKE','%'.$item.'%')

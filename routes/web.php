@@ -25,5 +25,7 @@ Route::get('estudiantes/search', [App\Http\Controllers\Estudiantes\ConsultaLista
 Route::post('estudiantes', [App\Http\Controllers\Estudiantes\CrearEstudianteController::class, 'store']);
 Route::put('estudiantes/{id}', [App\Http\Controllers\Estudiantes\ActualizarEstudianteController::class, 'update']);
 Route::delete('estudiantes/{id}', [App\Http\Controllers\Estudiantes\EliminarEstudianteController::class, 'destroy']);
+Route::post('/subscriptions', [App\Http\Controllers\EstudiantesMentorias\SubscriptionController::class, 'store']);
+Route::get('/subscriptions', [App\Http\Controllers\EstudiantesMentorias\SubscriptionController::class, 'index']);
 
 

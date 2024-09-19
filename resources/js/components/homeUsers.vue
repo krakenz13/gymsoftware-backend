@@ -4,7 +4,7 @@
 <!-- Modal function the user's created  -->
 <div class="d-inline-flex ">
     <button type="button" @click="showModalCreated" data-bs-toggle="modal" data-bs-target="#staticBackdropCreated"
-      class="d-inline-flex col btn btn-primary m-4">
+      class="d-inline-flex col btn btn-danger m-4">
       <i class="bi bi-person-add "> Crear Usuario</i>
     </button>
   </div>
@@ -18,7 +18,7 @@
           <th>Nombre</th>
           <th>Apellido</th>
           <th>Cédula</th>
-          <th>Teléfono</th>
+          <th>Tecnico</th>
           <th>Fecha de Creación</th>
           <th>Aciones</th>
         </tr>
@@ -35,8 +35,6 @@
           <td>{{ estudiante.cedula }}</td>
           <td>{{ estudiante.telefono }}</td>
           <td>{{ new Date(estudiante.created_at).toLocaleString('en-US') }}</td>
-          
-
           <td>
             <div class="d-inline-flex ">
               <button type="button" @click="abrirModalEditar(estudiante) " data-bs-toggle="modal" data-bs-target="#staticBackdropView"
@@ -49,22 +47,16 @@
                 <i class="bi bi-pen me-2"></i>
               </button>
 
+              <button  class="d-inline-flex col btn btn-warning m-1" @click="openModal(estudiante)" data-bs-toggle="modal" data-bs-target="#staticBackdropUser">
+                <i class="bi bi-calendar me-2"></i>
+              </button>
 
               <button @click="DeleteUser(estudiante.id, estudiante.nombre)"  class="d-inline-flex col btn btn-danger m-1">
                 <i class="bi bi-trash me-2"></i>
               </button>
-
-              <button  class="d-inline-flex col btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#staticBackdropUser">
-                <i class="bi bi-calendar me-2"></i>
-              </button>
-
             </div> 
-           
           </td>
-
-
         </tr>
-
       </tbody>
     </table>
   </div>
@@ -74,7 +66,7 @@
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header bg-primary">
+        <div class="modal-header bg-danger">
           <h1 class="modal-title fs-5 " id="staticBackdropLabel">{{ titulo }}</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -112,9 +104,9 @@
               </div>
             </div>
             <div class="input-group  mb-3">
-              <label for="phone" class="input-group-text"><i class="bi bi-telephone-inbound-fill"></i></label>
+              <label for="phone" class="input-group-text"><i class="bi bi-mortarboard-fill"></i></label>
               <div class="col-sm-10">
-                <input type="text" v-model="CrearUsuario.telefono" class="form-control" id="telefono" name="phone"
+                <input type="descrition" row="4" v-model="CrearUsuario.telefono" class="form-control" id="telefono" name="phone"
                   placeholder="Ingrese su número de teléfono">
               </div>
             </div>
@@ -184,7 +176,7 @@
               </div>
             </div>
             <div class="input-group  mb-3">
-              <label for="phone" class="input-group-text"><i class="bi bi-telephone-inbound-fill"></i></label>
+              <label for="phone" class="input-group-text"><i class="bi bi-mortarboard-fill"></i></label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" disabled v-model="CrearUsuario.telefono" id="telefono"
                   name="phone" placeholder="Ingrese su número de teléfono">
@@ -216,56 +208,45 @@
   </div>
 
   <!-- update the User's with dateDuration -->
-  <div class="modal fade" id="staticBackdropUser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header bg-primary">
-          <h1 class="modal-title fs-5 " id="staticBackdropLabel">Duración Mentoria</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-
-          <div class="text-center">
-            <!-- puede ir un cargando para modal -->
-          </div>
-          <form>
-            <div class="input-group  mb-3">
-              <label for="fristname" class="input-group-text"><i class="bi bi-person-fill"></i></label>
-              <div class="col-sm-10 text-center">
-                <input type="text"  class="form-control" name="fristname"
-                  placeholder="Ingrese su Nombre">
-              </div>
-            </div>
-            <div class="input-group  mb-3">
+  <div class="modal fade" id="staticBackdropUser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-primary">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Duración Mentoria</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form @submit.prevent="subscribe">
+          <div class="input-group mb-3">
             <label for="fristname" class="input-group-text"><i class="bi bi-battery-full"></i></label>
             <div class="col-sm-10 text-center">
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Seleccionar Tipo De Mentoria</option>
-              <option value="1">Mes </option>
-              <option value="2">Trimestre</option>
-              <option value="3">año</option>
-           </select>
-          </div>
-
+              <select  class="form-select" aria-label="Default select example" v-model="subscriptionType">
+                <option value="0">Seleccionar Tipo De Mentoria</option>
+                <option value="1_month">1 Mes</option>
+                <option value="3_months">3 Meses</option>
+                <option value="1_year">1 Año</option>
+              </select>
+            </div>
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Registrar</button>
-              
-
-            </div>
-
-
-          </form>
-
-        </div>
-
+            <button type="button" class="btn btn-success" @click="subscribe">Guardar</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
+</div>
+
  
 </template>
+
+<style>
+.alert-red {
+  background-color: red;
+  color: white;
+}
+</style>
 
 <script>
 import axios from 'axios';
@@ -277,13 +258,9 @@ import DataTablesCore from 'datatables.net';
 import jszip from 'jszip';
 import pdfmake, { ID } from 'pdfmake/build/pdfmake';
 import print from 'datatables.net-buttons-bs5';
-import pdfFonts from 'pdfmake/build/vfs_fonts';
 import 'datatables.net-buttons/js/dataTables.buttons';
 import 'datatables.net-buttons/js/buttons.html5';
 import 'sweetalert2/dist/sweetalert2.min.css';
-import moment from 'moment';
-
-
 
 
 window.JSZip = jszip;
@@ -293,14 +270,11 @@ DataTable.use(datatable);
 DataTable.use(jszip);
 DataTable.use(pdfmake);
 DataTable.use(print);
-DataTable.use(pdfFonts);
+
 
 
 export default {
   components: {
-    
-    
-    
   },
   data() {
     return {
@@ -313,14 +287,9 @@ export default {
       btnEditar: false,
       idEstudiante: '',
       titulo:'',
-      fechaInicio: null,
-      duracion: null,
-
-
-
-
+     
+      
     };
-    
   },
   
   mounted() {
@@ -377,48 +346,46 @@ export default {
       });
 
     },
-    crear(event) {
-      event.preventDefault()
-      var miFoto = document.getElementById("fotoimg");
-      this.foto = miFoto.src;
+async crear(event) {
+  event.preventDefault();
+  
+  const miFoto = document.getElementById("fotoimg");
+  this.foto = miFoto.src;
 
-      axios.post('http://127.0.0.1:8000/estudiantes', this.CrearUsuario)
-        .then((res) => {
-          this.getEstudiantes();
-          this.usuarios = res.data;
-          window.location.reload();
+  try {
+    const res = await axios.post('http://127.0.0.1:8000/estudiantes', this.CrearUsuario);
+    this.getEstudiantes();
+    this.usuarios = res.data;
 
-          Swal.fire({
-            title: '¡Felicidades!',
-            text: 'Usuario Creado Exitosamente',
-            icon: 'success',
-            confirmButtonText: '¡Entendido!'
-          });
+    Swal.fire({
+      title: '¡Felicidades!',
+      text: 'Usuario Creado Exitosamente',
+      icon: 'success',
+      confirmButtonText: '¡Entendido!'
+    });
+  } catch (error) {
+    Swal.fire({
+      title: '¡Error!',
+      text: '500 (Error En Su Servidor)',
+      icon: 'error',
+      confirmButtonText: 'OK'
+    });
+  }
+},
 
+previsualizarFoto(event) {
+  if (event.target.files.length === 0) return;
 
-        })
-        .catch(() => {
-          Swal.fire({
-            title: '¡Error!',
-            text: '500 (Error En Su Servidor)',
-            icon: 'error',
-            confirmButtonText: 'OK'
-          });
+  const reader = new FileReader();
+  reader.readAsDataURL(event.target.files[0]);
 
-        });
+  reader.onload = () => {
+    const miFoto = document.getElementById("fotoimg");
+    miFoto.src = reader.result;
+    this.foto = miFoto.src;
+  };
+},
 
-   },
-   previsualizarFoto(event){
-            var reader = new FileReader();
-            reader.readAsDataURL(event.target.files[0]);
-            reader.onload =function(){
-                var miFoto = document.getElementById("fotoimg");
-                miFoto.src = reader.result;
-                this.foto = miFoto.src;
-
-            }
-
-   },    
     DeleteUser(id, nombre) {
       Swal.fire({
         title: '¿Estás seguro de eliminar a ' + nombre + '?',
@@ -504,9 +471,10 @@ export default {
             reader.readAsDataURL(event.target.files[0]);
 
    },
-     
+
+    }
   }
+
    
-}
 
 </script>

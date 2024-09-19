@@ -17,8 +17,9 @@ return new class extends Migration
             $table->string('apellido');
             $table->string('cedula');
             $table->string('telefono');
-            $table->string('foto')->nullable();
+            $table->longtext('foto')->nullable();
             $table->timestamps();
+            
         });
     }
 
@@ -33,7 +34,8 @@ return new class extends Migration
             $table->string('apellido');
             $table->string('cedula');
             $table->string('telefono');
-            $table->longtext('foto');
+            $table->longtext('foto')->nullable();
+            $table->timestamp('created_at')->nullable();
             $table->timestamps();
         });
     }

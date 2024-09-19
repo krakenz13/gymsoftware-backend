@@ -39,7 +39,7 @@
     
 </head>
 <body class="app sidebar-mini">
- <header class="app-header"><a class="app-header__logo" href="index.html">body live</a>
+ <header class="app-header"><a class="app-header__logo" href="index.html">Serve X</a>
     <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
     <div id="app" class="app-nav">
         <nav class="navbar navbar-expand-md ">      

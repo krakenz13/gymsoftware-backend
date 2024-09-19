@@ -9,7 +9,7 @@
         <div class="col-sm-8 col-lg-8">
             <div class="tile">
                 <div class="tile-body">
-                    <div class="card-header text-center fs-4">{{ __('Base De Datos Body Live') }}</div>
+                    <div class="card-header text-center fs-4">{{ __('Base De Datos De Tecnicos') }}</div>
 
                     <div class="card-body col-md-12  my-4" id="tableApp">
                         <ExampleComponent></ExampleComponent>
